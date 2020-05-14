@@ -1,13 +1,15 @@
 
 <!doctype html>
+
 <html lang="en">
+{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Album example · Bootstrap</title>
+    <title>Manimay Raj</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -47,15 +49,15 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand active" href="#">Manimay Raj</a>
+      <a class="navbar-brand active" href="{% url 'home' %}">Manimay Raj</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link" href="#">Blog</a>
+          <a class="nav-item nav-link" href="https://www.twitter.com"target="_blank">Twitter</a>
+          <a class="nav-item nav-link" href="{% static 'resume.pdf' %}" target="_blank">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
 
         </div>
       </div>
@@ -69,7 +71,8 @@
       <h1>Hello ! I'm Manimay.</h1>
       <p class="lead text-muted">Hey,my name is Manimay Raj and I love to make Django websites.It's the thrill of handling the requests that the people want!</p>
       <p>
-        <a href="mailto:manimayraj@live.in" class="btn btn-primary my-2">e-mail</a>
+        <a href="mailto:manimayraj@live.in" class="btn btn-primary my-2">e-mail</a><br/>
+        <img src="{% static '643x0w.jpg' %}" height=300 width=300/>
 
       </p>
     </div>

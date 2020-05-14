@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Blogs</title>
+    <title>{{ blog.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -55,7 +55,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="https://www.twitter.com" target="_blank">Twitter</a>
-          <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% static 'resume.pdf' %}" target="_blank" >Resume</a>
           <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
 
         </div>
@@ -66,22 +66,18 @@
 <main role="main">
   <div class="container">
 
-  <h1 class="text-center pt-3">Welcome to Mani's blog </h1>
+  <h1 class="text-center pt-3">Welcome to Blog Page </h1>
   <br/>
   <br/>
-  <h2> Latest Posts</h2>
+  <h2> {{ detailblog.title }}</h2>
+  {{ detailblog.pub_date_pretty }}
   <hr/>
-  {% for blog in blogs.all %}
-  <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
-  {{ blog.pub_date_pretty }}
-  <hr/>
-  <img class="img-fluid" src="{{ blog.image.url }}" height=200 width=300/>
+  <img class="img-fluid" class="center" src="{{ detailblog.image.url }}" height=150 width=800/>
   <br/>
-  <p>{{ blog.summary }}</p>
+  <br/>
+  <p>{{ detailblog.body }}</p>
   <br/>
 
-
-  {% endfor %}
 
 
 </div>
